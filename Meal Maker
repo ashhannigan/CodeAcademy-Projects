@@ -1,0 +1,28 @@
+const menu = {
+  _meal: "",
+  _price: 0,
+
+  set mealSetter(mealToCheck) {
+    if (typeof mealToCheck === "string") {
+      this._meal = mealToCheck;
+    }
+  },
+
+  set priceSetter(priceToCheck) {
+    if (typeof priceToCheck === "number") {
+      this._price = priceToCheck;
+    }
+  },
+
+  get todaysSpecial() {
+    if (this._meal && this._price) {
+      return `Today's Special is ${this._meal} for only ${this._price} USD`;
+    }
+  },
+};
+
+menu.mealSetter = "Pizza";
+menu.priceSetter = 18;
+
+console.log(menu.todaysSpecial);
+
