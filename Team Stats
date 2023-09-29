@@ -1,0 +1,51 @@
+const team = {
+  _players: [],
+  _games: [],
+
+  get players() {
+    return this._players;
+  },
+
+  get games() {
+    return this._games;
+  },
+
+  addPlayer(newFirstName, newLastName, newAge) {
+    const newPlayer = {
+      firstName: newFirstName,
+      lastName: newLastName,
+      age: newAge,
+    };
+    this._players.push(newPlayer);
+  },
+
+  addGame(newOpponent, newTeamPoints, newOpponentPoints) {
+    const newGame = {
+      opponent: newOpponent,
+      teamPoints: newTeamPoints,
+      opponentPoints: newOpponentPoints,
+    };
+    this._games.push(newGame);
+  },
+};
+
+team._players.push(
+  {
+    firstName: "Pete",
+    lastName: "Wheeler",
+    age: 54,
+  },
+  {
+    firstName: "Joe",
+    lastName: "Smith",
+    age: 25,
+  },
+  {
+    firstName: "Ash",
+    lastName: "Smith",
+    age: 35,
+  }
+);
+
+team.addGame('Titans', 100, 98);
+console.log(team._games);
