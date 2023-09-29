@@ -17,6 +17,8 @@ const menu = {
   get todaysSpecial() {
     if (this._meal && this._price) {
       return `Today's Special is ${this._meal} for only ${this._price} USD`;
+    } else {
+      return "Today's Special is not set.";
     }
   },
 };
